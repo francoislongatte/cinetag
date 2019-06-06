@@ -1,0 +1,26 @@
+
+.panel {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  max-height: calc(100vh - 3.25rem - 100px);
+
+  img {
+    max-height: 50px;
+  }
+  .panel-block.is-active {
+    background-color: hsla(203, 100%, 56%, 0.32);
+  }
+  form {
+    width: 100%;
+  }
+  .icon {
+    top: 6px;
+    &.is-left {
+      left: 12.5px;
+    }
+    &.is-right {
+      right: -12.5px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<div class="display">
+  <button class="button is-rounded is-link" (click)="togglePlay()">
+    <ng-container *ngIf="(getState | async).config.play == false">play</ng-container>
+    <ng-container *ngIf="(getState | async).config.play == true">Pause</ng-container>
+  </button>
+  <ng-container *ngFor="let tagline of getListTag | async; let i = index;">
+    <div class="item" [ngClass]="selectAnimation(i)">
+      <img [src]="tagline.image">
+      <p class="title is-01">{{tagline.message}}</p>
+    </div>
+  </ng-container>
+  <div *ngIf="(getListTag | async).length === 0">
+    <h1  class="title is-1">CineTag</h1>
+    <p class="subtitle is-6">Loading</p>
+  </div>
+</div>

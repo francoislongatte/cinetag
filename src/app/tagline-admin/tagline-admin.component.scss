@@ -1,0 +1,15 @@
+section {
+  background: #111111;
+  background-size: cover;
+  background-position: bottom 0 center;
+  .hero-body {
+    align-items: flex-start;
+  }
+}
+
+.panel {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  max-height: calc(100vh - 3.25rem - 100px);
+}

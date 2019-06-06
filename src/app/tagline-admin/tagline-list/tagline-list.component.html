@@ -1,0 +1,51 @@
+<div class="panel">
+  <p class="panel-heading">
+    TagLine List
+  </p>
+  <div class="panel-block">
+    <p class="control has-icons-left">
+      <input class="input " type="text" placeholder="search" [(ngModel)]="term">
+      <span class="icon is-small is-left">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </span>
+    </p>
+  </div>
+  <ng-container [formGroup]="form">
+    <ng-container formArrayName="items">
+      <ng-container *ngFor="let tagline of getListItems | search: term; let i = index;">
+        <a (click)="selectedItem(tagline)" [formGroupName]="i" class="panel-block"
+           [ngClass]="{'is-active': tagline.get('selected').value}">
+          <div class="columns">
+            <ng-container *ngIf="itemImage(tagline)">
+              <div class="column is-4">
+                <img [src]="itemImage(tagline)"/>
+              </div>
+            </ng-container>
+            <div class="column is-8">
+              <p>{{itemMessage(tagline)}}</p>
+            </div>
+          </div>
+        </a>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+  <div class="panel-block">
+    <div class="columns is-multiline">
+      <div class="column is-12">
+        <button class="button is-danger is-fullwidth" (click)="deleteAllItem()">
+          Delete All Item
+        </button>
+      </div>
+      <div class="column">
+        <button class="button is-link is-outlined is-fullwidth" (click)="clearTerm()">
+          reset search
+        </button>
+      </div>
+      <div class="column">
+        <button class="button is-link is-outlined is-fullwidth" (click)="resetSelected()">
+          reset selected
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+section {
+  background: url('../../assets/image/backgroundCinema.png');
+  background-size: cover;
+  background-position: bottom 0 center;
+  transition: background-color 0.8s;
+  .hero-body {
+    align-items: flex-start;
+  }
+  &.play{
+    background-color: #111111;
+  }
+  &.pause {
+    background-color: #CCCCCC;
+  }
+}

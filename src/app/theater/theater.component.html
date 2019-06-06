@@ -1,0 +1,9 @@
+<app-header></app-header>
+<section class="hero is-fullheight-with-navbar" [ngClass]="{'play': (getConfig | async).play, 'pause': !(getConfig | async).play}">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <app-display-tag-animation></app-display-tag-animation>
+    </div>
+  </div>
+</section>
+

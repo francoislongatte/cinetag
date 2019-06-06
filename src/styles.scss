@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+$fa-font-path: '../node_modules/font-awesome/fonts';
+
+$primary: #AC904D;
+$box-padding: 2.5rem;
+
+
+@import '~bulma-scss/utilities/all';
+
+@import '~bulma-scss/base/all';
+
+@import '~bulma-scss/grid/all';
+
+@import '~bulma-scss/form/all';
+
+@import '~bulma-scss/elements/container';
+@import '~bulma-scss/elements/title';
+@import '~bulma-scss/elements/button';
+
+@import '~bulma-scss/layout/section';
+@import '~bulma-scss/layout/hero';
+@import '~bulma-scss/components/navbar';
+@import '~bulma-scss/components/tabs';
+@import '~bulma-scss/components/panel';

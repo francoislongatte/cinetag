@@ -1,0 +1,56 @@
+<div class="panel">
+  <p class="panel-heading">
+    Edit TagLine
+  </p>
+  <div class="panel-block">
+    <form class="Form" [formGroup]="form">
+      <div class="field">
+        <label class="label">Url Image</label>
+        <div class="control has-icons-left has-icons-right">
+          <input formControlName="image" class="input"
+                 [ngClass]="{'is-success': form.get('image').valid, 'is-danger': !form.get('image').valid && form.get('image').touched}"
+                 type="url" placeholder="Url Image">
+          <span class="icon is-small is-left">
+            <i class="fa fa-link fa-xs"></i>
+          </span>
+          <span *ngIf="form.get('image').valid" class="icon has-text-success is-small is-right">
+            <i class="fa fa-check fa-xs"></i>
+          </span>
+          <span *ngIf="!form.get('image').valid && form.get('image').touched"
+                class="icon has-text-danger is-small is-right">
+            <i class="fa fa-times fa-xs"></i>
+          </span>
+          <p *ngIf="!form.get('image').valid && form.get('image').touched" class="help is-danger">this field must start
+            with 'http://www.' or 'https://www.'!</p>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Message</label>
+        <div class="control has-icons-left has-icons-right">
+          <textarea formControlName="message" class="textarea"
+                    [ngClass]="{'is-success': form.get('message').valid, 'is-danger': !form.get('message').valid && form.get('message').touched}"
+                    type="text" placeholder="TagLine"></textarea>
+          <span *ngIf="form.get('message').valid" class="icon has-text-success is-small is-right">
+            <i class="fa fa-check"></i>
+          </span>
+          <span *ngIf="!form.get('message').valid && form.get('message').touched"
+                class="icon has-text-danger is-small is-right">
+            <i class="fa fa-times"></i>
+          </span>
+          <p *ngIf="!form.get('message').valid && form.get('message').touched" class="help is-danger">This field must
+            not be empty!</p>
+        </div>
+      </div>
+
+      <div class="field is-grouped is-grouped-right">
+        <div class="control">
+          <button class="button is-danger" (click)="delete()">Delete</button>
+        </div>
+        <div class="control">
+          <button class="button is-link" (click)="edit()">Edit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
